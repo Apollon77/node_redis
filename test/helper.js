@@ -169,7 +169,7 @@ module.exports = {
         //     parsers.push('hiredis');
         // } catch (e) {/* ignore eslint */}
         if (process.platform !== 'win32') {
-            protocols.push(/*'IPv6',*/ '/tmp/redis.sock');
+            protocols.push('IPv6', '/tmp/redis.sock');
         }
         var options = [{
             detect_buffers: true
