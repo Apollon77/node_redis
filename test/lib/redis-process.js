@@ -26,9 +26,9 @@ function waitForRedis (available, cb, port) {
         running = true;
         bluebird.join(
             tcpPortUsed.check(port, '127.0.0.1'),
-            tcpPortUsed.check(port, '::1'),
+            //tcpPortUsed.check(port, '::1'),
         function (ipV4, ipV6) {
-            if (ipV6 === available && ipV4 === available) {
+            if (/*ipV6 === available*/ && ipV4 === available) {
                 if (fs.existsSync(socket) === available) {
                     clearInterval(id);
                     return cb();
